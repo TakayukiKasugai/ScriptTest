@@ -22,7 +22,7 @@ public class Boss : MonoBehaviour {
 
 	//魔法用の関数
 	public void Magic(){
-		if (mp - 5 > 0) {
+		if (mp - 5 >= 0) {//残りMPが足りているとき
 			mp -= 5;
 			Debug.Log ("魔法攻撃をした。残りMPは" + mp + "。");
 		} else {
@@ -33,9 +33,11 @@ public class Boss : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//11回呼び出す
 		for (int i = 0; i < 11; i++) {
 			this.Magic ();
 		}
+
 	}
 	
 	// Update is called once per frame
